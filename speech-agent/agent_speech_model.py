@@ -405,7 +405,7 @@ def classify_accent(audio_file_path):
     try:
         out_prob, score, _, text_lab = classifier.classify_file(audio_file_path)
 
-        temperature = 0.7
+        temperature = 0.2
         if hasattr(out_prob, 'squeeze'):
             probs = torch.softmax(out_prob.squeeze() / temperature, dim=0)
         else:
